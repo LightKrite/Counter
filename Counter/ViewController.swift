@@ -9,21 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var counterButton: UIButton!
-    @IBOutlet weak var counterText: UILabel!
+    @IBOutlet weak private var counterButton: UIButton!
+    @IBOutlet weak private var counterLabel: UILabel!
     private var counterNumber = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        counterText.text = "0"
+        counterLabel.text = "0"
         counterButton.tintColor = .orange
         
     }
 
-    @IBAction func counterButtonTap(_ sender: Any) {
+    @IBAction private func counterButtonTap(_ sender: Any) {
         counterNumber += 1
-        counterText.text = "Значение счетчика: \(counterNumber)"
+        counterLabel.text = "Значение счетчика: \(counterNumber)"
     }
     
 }
